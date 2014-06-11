@@ -47,20 +47,20 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/modoru"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="メンテ" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/sakujo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="登録" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ひとことチェック" />
