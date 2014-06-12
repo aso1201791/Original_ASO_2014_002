@@ -16,7 +16,7 @@ public class HitokotoActivity extends Activity implements View.OnClickListener{
 	@Override
 	public void onClick(View v) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
 
 }

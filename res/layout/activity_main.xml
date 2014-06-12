@@ -47,13 +47,13 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/modoru"
+                android:id="@+id/mente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="メンテ" />
 
             <Button
-                android:id="@+id/sakujo"
+                android:id="@+id/toroku"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="登録" />
