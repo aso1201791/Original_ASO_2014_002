@@ -73,7 +73,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			//インテントのインスタンス生成
 			Intent intent2 =new Intent(MainActivity.this,HitokotoActivity.class );
 			//インテントに一言を混入
-			intent.putExtra("hitokoto", strHitokoto);
+			intent2.putExtra("hitokoto", strHitokoto);
 
 			//次画面のアクティビティ起動
 			startActivity(intent2);

@@ -33,7 +33,7 @@ public class HitokotoActivity extends Activity implements View.OnClickListener{
 
 		//取得したStringを、TxtViewにセット
 		TextView txvHITIKOTO = (TextView)findViewById(R.id.txvHITOKOTO);
-		txvHITOKOTO.setText(strHitokoto);
+		txvHITIKOTO.setText(strHitokoto);
 	}
 
 }

@@ -23,8 +23,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("CREATE TABLE IF NOT EXISTS" +
-				"HItokoto (_id INTEGER PRIMSRY KEY AUTOINCREMENT NOT NULL , phrase TEXT)");
+		db.execSQL(" CREATE TABLE IF NOT EXISTS " +
+				"HItokoto (_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , phrase TEXT)");
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
 	public void insertHitokoto(SQLiteDatabase db, String inputMsg) {
 
-		String sqlstr = " insert ito Hitokoto (phrase) values('" + inputMsg + "');";
+		String sqlstr = " insert into Hitokoto (phrase) values('" + inputMsg + "');";
 		try {
 			//トランザクション開始
 			db.beginTransaction();
@@ -77,5 +77,50 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 					//既にカーソルもcloseしてあるので、何もしない
 				}
 		return rtString;
+	}
+
+	public SQLiteCursor selectHitokotoList(SQLiteDatabase db){
+
+		SQLiteCursor cursor = null;
+
+		String sqlstr = " SELECT _id, phrase FROM Hitokoto ORDER BY _id; ";
+		try{
+			//トランザクション開始
+			cursor = (SQLiteCursor)db.rawQuery(sqlstr, null);
+			if(cursor.getCount()!=0){
+				//カーソル開始位置を先頭にする
+				cursor.moveToFirst();
+			}
+			//cursorは呼び出し元へ返すからここではcloseしない
+			//cursor.close();
+
+		} catch (SQLException e){
+			Log.e("ERROR", e.toString());
+		}finally{
+
+		}
+		return cursor;
+	}
+
+	/**
+	 * Hitokoto表から引数(id)で指定した値とカラム[_id]の値が等しいレコードを削除
+	 * @param SQLiteDatabase DELETEアクセスするDBのインスタンス変数
+	 * @pram　idカラム[_id]と比較するために指定する削除条件の値
+	 */
+	public void deleteHitokoto(SQLiteDatabase db, int id){
+
+		String sqlstr = " DELET FROM Hitokoto where _id = " + id + " ;";
+		try {
+			//トランザクション開始
+			db.beginTransaction();
+			db.execSQL(sqlstr);
+			//トランザクション成功
+			db.setTransactionSuccessful();
+		}  catch (SQLException e){
+			Log.e("ERROR", e.toString());
+		}finally{
+			//トランザクション終了
+			db.endTransaction();
+		}
 	}
 }

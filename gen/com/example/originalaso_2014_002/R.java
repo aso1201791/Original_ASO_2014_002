@@ -26,10 +26,10 @@ public final class R {
     }
     public static final class id {
         public static final int EditHitokoto=0x7f080002;
+        public static final int LvHITOKOTO=0x7f080007;
         public static final int action_settings=0x7f08000a;
         public static final int check=0x7f080005;
         public static final int imageView1=0x7f080006;
-        public static final int listView1=0x7f080007;
         public static final int mente=0x7f080003;
         public static final int modoru=0x7f080008;
         public static final int sakujo=0x7f080009;
