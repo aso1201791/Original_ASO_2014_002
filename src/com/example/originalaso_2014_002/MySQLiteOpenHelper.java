@@ -109,7 +109,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 	 */
 	public void deleteHitokoto(SQLiteDatabase db, int id){
 
-		String sqlstr = " DELET FROM Hitokoto where _id = " + id + " ;";
+		String sqlstr = " DELETE FROM Hitokoto where _id = " + id + " ;";
 		try {
 			//トランザクション開始
 			db.beginTransaction();
